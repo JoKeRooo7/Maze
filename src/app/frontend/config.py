@@ -31,5 +31,4 @@ def resource_path(relative_path, base_path=None):
 
     return result_path
 
-
-IMAGE_ICON_PATH = resource_path("statics/maze.ico")
+IMAGE_ICON_PATH = resource_path('statics/maze.ico')

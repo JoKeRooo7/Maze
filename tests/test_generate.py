@@ -7,7 +7,7 @@ from backend.mazes.dto import SolutionData
 from backend.mazes.algorithms.solutions.breadth_first_search import BFS
 from backend.mazes.algorithms.generating.generating_maze import GeneratingMaze
 
-params = [(i, j) for i in range(2, 20) for j in range(2, 20)]
+params = [(i, j) for i in range(2, 51) for j in range(2, 51)]
 
 @pytest.mark.parametrize("rows, cols", params)
 def test_for_insulation(rows, cols):

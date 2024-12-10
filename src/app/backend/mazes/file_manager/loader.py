@@ -2,27 +2,30 @@ from typing import List, Tuple
 
 from loguru import logger
 
-from app.backend.mazes.validators import MazeValidators
+from backend.mazes.validators import MazeValidators
 
 
 class MazeLoader:
     """
-    Class for loading mazes from file
+    Класс для загрузки матрицы из файла
     """
 
     def __init__(self, file_path: str):
         self.file_path = file_path
 
     @staticmethod
-    def _read_matrix(lines: List[str], start_index: int,
-                     num_rows: int) -> List[List[int]]:
+    def _read_matrix(lines: List[str], start_index: int, num_rows: int) -> List[List[int]]:
         return [
             list(map(int, lines[start_index + i].strip().split()))
             for i in range(num_rows)
         ]
 
     def load_maze(self) -> Tuple[int, int, List, List]:
-        with open(self.file_path, "r") as file:
+        """
+        Функция для загрузки матрицы из файла
+        :return: rows, cols, right_walls, lower_walls
+        """
+        with open(self.file_path, 'r') as file:
             lines = file.readlines()
 
         i = 0
@@ -39,10 +42,5 @@ class MazeLoader:
             logger.error(f"Файл {self.file_path} не соотвествует формату")
             raise e
 
-        MazeValidators(
-            rows=rows,
-            cols=cols,
-            right_walls=right_walls,
-            lower_walls=lower_walls,
-        )
+        MazeValidators(rows=rows, cols=cols, right_walls=right_walls, lower_walls=lower_walls)
         return rows, cols, right_walls, lower_walls

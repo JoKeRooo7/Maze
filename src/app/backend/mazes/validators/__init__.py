@@ -1,1 +1,1 @@
-from .mazes import MazeValidators, SolutionPathValidator
+from .maze import MazeValidators

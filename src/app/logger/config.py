@@ -21,7 +21,7 @@ def configure_logger():
         level="INFO",
         format=lambda record: format_record(record, root_folder),
         backtrace=True,
-        diagnose=True,
+        diagnose=True
     )
 
     logger.add(

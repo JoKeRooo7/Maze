@@ -1,13 +1,11 @@
 from typing import Protocol
-
-from app.backend.mazes.dto import MazeData
+from backend.mazes.dto import MazeData
 
 
 class IBaseGeneratingMaze(Protocol):
     """
     Интерфейс базового генератора лабиринта
     """
-
     def create_maze(self, maze_data: MazeData) -> MazeData:
         """
         Функция создания лабиринта с заданными параметрами

@@ -2,8 +2,8 @@ import sys
 
 from PySide6.QtWidgets import QApplication
 
-from app.frontend.desktop_app.mazes.main_window import MainWindow
-from app.logger import configure_logger
+from frontend.desktop_app.mazes.main_window import MainWindow
+from logger import configure_logger
 from loguru import logger
 
 
@@ -14,8 +14,8 @@ def main():
     window = MainWindow()
     logger.info("Открытие окна 'Mazes And Caves'")
     window.show()
+    logger.info("Закрытие окна 'Mazes And Caves'. Выход из программы")
     sys.exit(app.exec())
-
 
 if __name__ == "__main__":
     main()

@@ -1,9 +1,9 @@
 from dataclasses import dataclass
-from typing import Tuple, List, Optional
+from typing import Tuple, List
 
 
 @dataclass
 class SolutionData:
     start_point: Tuple[int, int]
     end_point: Tuple[int, int]
-    solution_coordinates: Optional[List[Tuple[int, int]]] = None
+    solution_coordinates: List[Tuple[int, int]]
